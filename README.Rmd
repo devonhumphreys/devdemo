@@ -111,8 +111,8 @@ Note: R creates what is called a .git pre-commit hook between Rmd and regular ma
 Both are needed to be able to commit properly without error. To ensure this, follow 
 this workflow: 
 
-\1. Edit README.Rmd
-\2. Run devtools::build_readme()
+1. Edit README.Rmd  
+2. Run devtools::build_readme()
 
 Now your files should be synced and the Commit will take as expected. Be sure to stage
 all project files before committing.
