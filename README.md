@@ -107,7 +107,16 @@ Go to Build \> Install Package.
 ## Step 7: Commit to Git repo
 
 If you haven’t set up your RStudio with Github credentials, follow along
-here: <https://usethis.r-lib.org/articles/git-credentials.html>
+here: <https://usethis.r-lib.org/articles/git-credentials.html>.
+
+Note: R creates what is called a .git pre-commit hook between Rmd and
+regular markdown. Both are needed to be able to commit properly without
+error. To ensure this, follow this workflow:
+
+\1. Edit README.Rmd \2. Run devtools::build_readme()
+
+Now your files should be synced and the Commit will take as expected. Be
+sure to stage all project files before committing.
 
 Go to Tools \> Version Control \> Commit. Then push to github:
 
