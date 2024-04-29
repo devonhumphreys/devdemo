@@ -1,0 +1,118 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
+# devdemo
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of devdemo is to demonstrate the development of a simple R package (IUO).
+
+## Step 1: Install RTools
+
+Begin by downloading and installing RTools for Windows from https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html 
+
+To avoid issues, change the download directory to C:\\Users\\<your.profile>\
+Open RStudio, and type the following code into the console:
+
+```{r}
+
+file.edit(file.path("~", ".Rprofile"))
+
+```
+
+Once the .Rprofile file opens in the editor, add the following code and save the file: 
+
+```{r}
+
+Sys.setenv(PATH = paste("C:/Users/<your.profile>/rtools44/usr/bin", Sys.getenv("PATH"), sep=";"))
+
+```
+
+Close the file and restart RStudio. Check that the changes were saved using: 
+
+```{r }
+
+file.edit(file.path("~", ".Rprofile"))
+
+```
+
+What was previously a blank file should now contain the code you added and make RTools available each time you open a new R session. 
+
+
+## Step 2: Determine a Package Name
+
+Use available function to determine if the name already is taken or has a slang meaning you do not intend. This function searches Github, CRAN, and Bioconductor to determine whether the name is already in use, and searches Wikipedia, Urban Dictionary, and Abbreviations.com to identify unintended meanings.
+
+```{r }
+library(available)
+available('name')
+
+```
+
+## Step 3: Initiate New Package
+
+Go to File > New Project > New Directory > R Package. 
+
+Input your package name. Click "Create a git repository", add a description, then click 'Create'.
+
+
+## Step 4: Edit DESCRIPTION
+
+Add details as prompted using the DESCRIPTION shell. 
+
+## Step 5: use Roxygen to provide function details
+
+Place cursor within a function. Go to Code > Insert Roxygen skeleton. Fill in the blanks to help users (and self) know how to use the code. 
+
+```{r}
+
+#' @param x provide explanation of what x is
+#' @return provide explanation of what the function outputs once run
+#' @examples provide examples of how to run the function
+
+```
+
+## Step 7: Create README R Markdown
+
+Enter the following code to create a README.Rmd to accompany the package: 
+
+```{r}
+
+library(usethis)
+use_readme_rmd()
+
+```
+
+## Step 8: Install package
+
+Go to Build > Install Package.
+
+
+## Step 7: Commit to Git repo
+
+If you haven't set up your RStudio with Github credentials, follow along here: 
+https://usethis.r-lib.org/articles/git-credentials.html
+
+Go to Tools > Version Control > Commit. Then push to github: 
+
+```{r include = T}
+
+#' use_github(protocol = 'https')
+
+```
+
+
