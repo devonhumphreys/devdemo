@@ -49,7 +49,7 @@ At the end of your own updates, always **COMMIT** your changes to git first, the
 Following these steps in this order will save you a lot of trouble. 
 
 1. **PULL** the repo from GitHub
-2. Edit/add/delete files as appropriate
+2. **Edit/add/delete** files as appropriate
 3. **COMMIT** your updates to local git
 4. **PUSH** your committed updates to GitHub
 
@@ -66,10 +66,8 @@ _I recommend you use your personal email address for this, as your account shoul
 
 #### Check for Existing Git
 
-```{r include = F}
-
+```{r include = TRUE, eval = FALSE}
 shell("which git")
-
 ```
 If the above command fails with error code 1, then git is not available and needs to be installed.
 
@@ -84,8 +82,7 @@ Download and install Git for Windows: https://gitforwindows.org/
 
 We will use the R package "usethis", so first we make sure it is installed and loaded into the current R session.   
 
-```{r include = T}
-
+```{r include = T, eval = FALSE}
 # Define a function to check and install the package if needed
 check_and_load_package <- function(package) {
   if (!require(package, character.only = TRUE)) {
@@ -101,17 +98,14 @@ check_and_load_package <- function(package) {
 
 
 check_and_load_package("usethis")
-
 ```
 
 ### 4. Add credentials to .gitconfig
 
-```{r include = T}
-
+```{r include = T, eval = FALSE}
 # Example from my own .gitconfig - do not copy exactly ;)
 use_git_config(user.name = 'Devon Humphreys', 
                user.email = 'dev.humphreys@gmail.com')
-
 ```
 
 **Note:** your email must be the same as the email you used to register on GitHub.
@@ -122,10 +116,8 @@ use_git_config(user.name = 'Devon Humphreys',
 
 Create a personal access token (PAT) to link Github to RStudio:
 
-```{r include = T}
-
+```{r include = T, eval = FALSE}
 create_github_token()
-
 ```
 
 This will launch Github in a browser. Give the token a simple, specific name and click "Generate Token". 
@@ -134,13 +126,11 @@ Copy this token to the clipboard and save in a Password manager.
 
 Next, save these credentials within RStudio: 
 
-```{r include = T}
-
+```{r include = T, eval = FALSE}
 library(gitcreds)
 gitcreds_set()
-
 ```
 
-Paste your copied PAT when prompted.
+Paste your copied PAT when prompted. Click Enter.
 
 You're all set!
