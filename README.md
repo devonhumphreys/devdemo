@@ -107,7 +107,7 @@ Go to Build \> Install Package.
 ## Step 7: Commit to Git repo
 
 If you haven’t set up your RStudio with Github credentials, see [GitHub
-Basics](https://github.com/devonhumphreys/devdemo/blob/master/GitHub%20Basics.Rmd).
+Basics](https://github.com/devonhumphreys/devdemo/blob/master/GitHub-Basics.md).
 
 Note: R creates what is called a .git pre-commit hook between Rmd and
 regular markdown. Both are needed to be able to commit properly without
